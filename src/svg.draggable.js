@@ -71,7 +71,8 @@ class DragHandler {
   // While dragging
   drag (ev) {
 
-    const { box, lastClick } = this
+    const box = this.box
+    const lastClick = this.lastClick
 
     const currentClick = this.el.point(getCoordsFromEvent(ev))
     const x = box.x + (currentClick.x - lastClick.x)
