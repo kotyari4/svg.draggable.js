@@ -119,7 +119,8 @@ class DragHandler {
 }
 
 extend(Element, {
-  draggable (enable = true) {
+  draggable (enable) {
+    if(enable === undefined) enable = true
     const dragHandler = this.remember('_draggable') || new DragHandler(this)
     dragHandler.init(enable)
     return this
